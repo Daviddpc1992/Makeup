@@ -1,0 +1,40 @@
+header{
+
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgba(1,64,64,0.25) 75% ;
+    background: rgb(242,242,242);
+    background: -moz-linear-gradient(55deg, rgba(242,242,242,0.5) 0%, rgba(242,208,217,0.25) 25%, rgba(139,93,111,0.25) 50%, rgba(1,64,64,0.25) 75%, rgba(1,38,35,0.25) 100%);
+    background: -webkit-linear-gradient(55deg, rgba(242,242,242,0.5) 0%, rgba(242,208,217,0.25) 25%, rgba(139,93,111,0.25) 50%, rgba(1,64,64,0.25) 75%, rgba(1,38,35,0.25) 100%);
+    background: linear-gradient(55deg, rgba(242,242,242,0.5) 0%, rgba(242,208,217,0.25) 25%, rgba(139,93,111,0.25) 50%, rgba(1,64,64,0.25) 75%, rgba(1,38,35,0.25) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f2f2f2",endColorstr="#012623",GradientType=1);
+}
+header section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10%;
+
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0%;
+    padding: 0%;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+
+
+}
+nav ul{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-around;
+margin: 0 5% 5% 0;
+}
+
+

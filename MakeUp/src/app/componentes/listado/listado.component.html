@@ -1,1 +1,48 @@
-<p>listado works!</p>
+
+<div class="container" *ngIf="productos" >
+
+  <select (change)="onChange($event)" >
+    <option value="maybelline">maybelline</option>
+    <option value=""></option>
+    <option value="color">color</option>
+  </select>
+  
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let producto of productos | paginate: { itemsPerPage: 10, currentPage: pageActual }">
+            <div class="container page-wrapper">
+                <div class="page-inner">
+                  <div class="row">
+                    <div class="el-wrapper">
+                      <div class="box-up">
+                        <img class="img" [src]="producto.api_featured_image" alt="">
+                        <div class="img-info">
+                          <div class="info-inner">
+                            <span class="p-name">{{producto.name}}</span>
+                            <span class="p-tipo">{{producto.category}}</span>
+                          </div>
+                          <div class="a-color"><span class="color">{{producto.tag_list[1]}}</span></div>
+                        </div>
+                      </div>
+              
+                      <div class="box-down">
+                        <div class="h-bg">
+                          <div class="h-bg-inner"></div>
+                        </div>
+              
+                        <a class="cart" href="#"  [ngClass]="{noStock : (producto.price === '0.0')}">
+                          <span class="price">{{producto.price}}{{producto.price_sign}}</span>
+                          <span class="add-to-cart">
+                            <span class="txt">Add in cart</span>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <pagination-controls class="paginator" (pageChange)="pageActual = $event"></pagination-controls>
+    </div>
+</div>
+

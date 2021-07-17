@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+// import { NgxSpinnerService } from 'ngx-spinner';
+import { ProductosService } from 'src/app/service/productos.service';
+// import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-listado',
@@ -7,9 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoComponent implements OnInit {
 
-  constructor() { }
+  productos: any;
+  pageActual: number = 1;
 
-  ngOnInit(): void {
+  constructor(
+    private productosService: ProductosService) { }
+  
+
+  ngOnInit() {
+    this.productosService.getAll()
+    .then(response =>{
+      this.productos = response
+       console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    
+    
+   
+  }
+
+  onChange($event:any) {
+    this.productosService.getbyBrand($event)
   }
 
 }
