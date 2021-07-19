@@ -7,8 +7,8 @@ import { ListadoComponent } from './componentes/listado/listado.component';
 const routes: Routes =   [
   { path: '', pathMatch: 'full', component: ListadoComponent },
   { path: 'productos', component: ListadoComponent },
-  { path: 'productos/:productoId', component: DetalleComponent },
-  { path: '**', redirectTo: '/productos' }
+  { path: 'productos/:pId', component: DetalleComponent },
+  // { path: '**', redirectTo: '/productos' }
 ];
 
 @NgModule({

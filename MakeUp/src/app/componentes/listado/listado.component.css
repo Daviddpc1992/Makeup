@@ -235,9 +235,7 @@
     font-size: 16px;
     color: #252525;
   }
-.noStock ::before{
-    content: "Producto no disponible";
-}
+
   .noStock{
       display: none!important;
   }
@@ -287,5 +285,37 @@
   /* Paginatio */
   pagination-controls{
      text-align: center;
-     margin: auto; 
+     margin: 3% 0 ; 
   }
+
+  /* Filtros */
+
+  .filtros{
+    margin: 2%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+  }
+  .filtros .form-select{
+   border: none!important;
+   box-shadow: none!important;
+   outline: none!important;
+  }
+
+  .form-check-input:checked {
+    background-color: rgb(139,93,111,0.25);
+    border-color: rgba(1,38,35,0.25);
+}
+.form-check-input:focus {
+  border-color: rgba(255, 255, 255, 0);
+  outline: 0;
+  box-shadow:none!important;
+}
+
+.loading{
+  margin: auto!important;
+  width: 100%;
+
+  text-align: center;
+
+}

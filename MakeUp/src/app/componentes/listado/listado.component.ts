@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import { NgxSpinnerService } from 'ngx-spinner';
 import { ProductosService } from 'src/app/service/productos.service';
-// import { Observable } from 'rxjs';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { tap, filter } from 'rxjs/operators';
 
 
 @Component({
@@ -9,31 +9,75 @@ import { ProductosService } from 'src/app/service/productos.service';
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css']
 })
-export class ListadoComponent implements OnInit {
 
+  
+export class ListadoComponent implements OnInit {
+  loading: boolean;
+  actorPanelOpenState = false;
   productos: any;
   pageActual: number = 1;
-
-  constructor(
-    private productosService: ProductosService) { }
+  ByBrand: [];
+  List: string;
   
 
-  ngOnInit() {
-    this.productosService.getAll()
-    .then(response =>{
-      this.productos = response
-       console.log(response)
+
+  constructor(private route: ActivatedRoute,
+    private productoService: ProductosService,
+    private router: Router,) {
+    this.route.params.pipe(
+      tap(params => this.productos = (params))
+    ).subscribe()
+
+    this.loading = true;
+  
+  }
+
+  async ngOnInit() {
+  
+    this.productoService.getAll()
+      .then(response => {
+        this.productos = response;
+         this.loading = false;
       })
       .catch(error => {
         console.log(error)
       })
-    
-    
    
-  }
+       
+ }
 
-  onChange($event:any) {
-    this.productosService.getbyBrand($event)
+  onChange($event: any) {
+    if ($event === "all") {
+      this.productoService.getAll()
+      .then(response => {
+        this.productos = response
+        this.loading = false;
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    } else {
+      this.List = $event.target.value
+      this.productoService.getByBrand(this.List)
+        
+      .then(response => {
+        this.productos = response
+        this.loading = false;
+      })
+      .catch(error => {
+        console.log(error)
+      })
+   
+    }
+    
+
+    
   }
+  
+  goToDetails(item: any) {
+    setTimeout(()=>{  
+      this.router.navigate(['productos/', item.id])
+    }, 300);
+}
 
 }

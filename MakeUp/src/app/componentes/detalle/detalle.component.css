@@ -1,6 +1,9 @@
+*{
+    font-family: "Montserrat", sans-serif;
+}
 main {
     max-width: 60%;
-    margin: 5% auto;
+    margin: 2% auto;
 }
 .card {
    border: none!important;
@@ -28,16 +31,19 @@ main {
     background: -moz-linear-gradient(55deg, rgba(242,242,242,0.5) 0%, rgba(242,208,217,0.25) 25%, rgba(139,93,111,0.25) 50%, rgba(1,64,64,0.25) 75%, rgba(1,38,35,0.25) 100%);
     background: -webkit-linear-gradient(55deg, rgba(242,242,242,0.5) 0%, rgba(242,208,217,0.25) 25%, rgba(139,93,111,0.25) 50%, rgba(1,64,64,0.25) 75%, rgba(1,38,35,0.25) 100%);
     background: linear-gradient(55deg, rgba(242,242,242,0.5) 0%, rgba(242,208,217,0.25) 25%, rgba(139,93,111,0.25) 50%, rgba(1,64,64,0.25) 75%, rgba(1,38,35,0.25) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f2f2f2",endColorstr="#012623",GradientType=1);
     color: #fff;
     padding: 10px 10px;
-    transition: all ease 2s
+    transition: all ease 2s;
+    cursor: pointer;
 }
-.card .card__title .icon > a {
-    color: #fff;
-}
+
 .card .card__title .icon:hover {
+
     background: #252525;
+}
+.card .card__title .icon:hover img{
+    filter: invert(100%);
+  
 }
 .card .card__body {
     padding: 0 40px;
@@ -51,10 +57,9 @@ main {
     flex: 1 0 50%;
 }
 .card .card__body .featured_text h1 {
-    margin: 0;
+    margin-top: 10%;
     padding: 0;
     font-weight: 800;
-    font-family: "Montserrat", sans-serif;
     font-size: 64px;
     line-height: 50px;
     color: #181e28;
@@ -64,7 +69,6 @@ main {
     padding: 0;
 }
 .card .card__body .featured_text p.sub {
-    font-family: "Montserrat", sans-serif;
     font-size: 26px;
     text-transform: uppercase;
     color: #686e77;
@@ -97,9 +101,14 @@ main {
     color: #555;
 }
 .card .card__body span.stock {
-    font-family: "Montserrat", sans-serif;
+
     font-weight: 600;
-    color: #a1cc16;
+    color: rgb(0, 244, 89);
+}
+.noStock{
+    color: rgb(244, 0, 0)!important;
+    text-decoration: line-through;
+    
 }
 .card .card__body .reviews .stars {
     display: inline-block;
@@ -133,40 +142,37 @@ main {
     left: 40px;
     width: calc(100% - 40px);
     height: 3px;
-    background: #115dd8;
-    background: linear-gradient(to right, #115dd8 0%, #115dd8 20%, #ddd 20%, #ddd 100%);
+    background: rgba(242,208,217,0.25) 25%, rgba(139,93,111,0.25) 50%;
+    background: linear-gradient(to right, rgba(242,208,217,0.25) 0%, rgba(139,93,111,0.25) 20%, rgba(1,64,64,0.25)20%, 75%, rgba(1,38,35,0.25) 100%);
+
 }
 .card .card__footer .recommend {
     flex: 1 0 10px;
 }
-.card .card__footer .recommend p {
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 14px;
-    color: #555;
-}
+
 .card .card__footer .recommend h3 {
     margin: 0;
-    font-size: 20px;
+    font-size: 2em;
     font-family: "Montserrat", sans-serif;
-    font-weight: 600;
+
     text-transform: uppercase;
-    color: #115dd8;
+    color: rgba(1,38,35,0.25);
 }
-.card .card__footer .action button {
+.card .card__footer .action a {
     cursor: pointer;
-    border: 1px solid #115dd8;
+    border: 1px solid rgba(0, 0, 0, 0.25);
     padding: 14px 30px;
-    border-radius: 200px;
-    color: #fff;
-    background: #115dd8;
+    color: rgb(0, 0, 0);
+    background: rgba(242,208,217,0.25);
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     transition: 200ms;
+    text-decoration: none;
 }
-.card .card__footer .action button:hover {
-    background: #fff;
-    color: #115dd8;
+.card .card__footer .action a:hover {
+    background: rgba(242,208,217,0.25);
+    color: rgba(0, 0, 0, 0.25);
+}
+.disable{
+    display: none;
 }
