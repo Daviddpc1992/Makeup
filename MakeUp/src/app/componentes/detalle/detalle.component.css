@@ -1,6 +1,4 @@
-*{
-    font-family: "Montserrat", sans-serif;
-}
+
 main {
     max-width: 60%;
     margin: 2% auto;
@@ -20,10 +18,8 @@ main {
     text-align: right;
     margin: 0;
     color: #252525;
-    font-family: sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    text-transform: uppercase;
+    font-family: var(--fuente-secundaria);
+    font-size: calc(var(--fontsize)*4);
 }
 .card .card__title .icon {
     flex: 1 0 10px;
@@ -69,16 +65,16 @@ main {
     padding: 0;
 }
 .card .card__body .featured_text p.sub {
-    font-size: 26px;
+    font-size: cal(var(--fontsize)*1.5);
     text-transform: uppercase;
     color: #686e77;
     font-weight: 300;
     margin-bottom: 5px;
 }
 .card .card__body .featured_text p.price {
-    font-family: "Fjalla One", sans-serif;
+    font-family: var(--fuente-primaria);
     color: #252525;
-    font-size: 26px;
+    font-size: cal(var(--fontsize)*1.5);
 }
 .card .card__body .image {
     padding-top: 15px;
@@ -94,10 +90,9 @@ main {
 }
 .card .card__body .description p {
     margin: 0;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 300;
+    font-family: var(--fuente-primaria);
+    font-size: var(--fontsize);
     line-height: 27px;
-    font-size: 16px;
     color: #555;
 }
 .card .card__body span.stock {
@@ -115,18 +110,8 @@ main {
     list-style: none;
     padding: 0;
 }
-.card .card__body .reviews .stars > li {
-    display: inline-block;
-}
-.card .card__body .reviews .stars > li .fa {
-    color: #f7c01b;
-}
-.card .card__body .reviews > span {
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    margin-left: 5px;
-    color: #555;
-}
+
+
 .card .card__footer {
     padding: 30px 40px;
     display: flex;
@@ -152,8 +137,8 @@ main {
 
 .card .card__footer .recommend h3 {
     margin: 0;
-    font-size: 2em;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--fuente-primaria);
+    font-size: calc(var(--fontsize)*2);
 
     text-transform: uppercase;
     color: rgba(1,38,35,0.25);
@@ -164,8 +149,8 @@ main {
     padding: 14px 30px;
     color: rgb(0, 0, 0);
     background: rgba(242,208,217,0.25);
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
+    font-family: var(--fuente-primaria);
+    font-size: var(--fontsize);
     transition: 200ms;
     text-decoration: none;
 }
