@@ -1,0 +1,143 @@
+
+
+<div class="container" *ngIf="productos">
+  <div class="filtros">
+
+
+    <div class="filtro" (change)="onChange($event)">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-check">
+              <h3>Category</h3>
+            </div>
+          </div>
+          <div class="col-4 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="all" checked>
+              <label class="form-check-label" for="exampleRadios1">All</label>
+            </div>
+          </div>
+          <div class="col-4 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="blush">
+              <label class="form-check-label" for="exampleRadios1">Blush</label>
+            </div>
+          </div>
+          <div class="col-4 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="bronzer">
+              <label class="form-check-label" for="exampleRadios2">
+                Bronzer
+              </label>
+            </div>
+          </div>
+          <div class="col-4 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="eyebrow">
+              <label class="form-check-label" for="exampleRadios1">
+                Eyebrow
+              </label>
+            </div>
+          </div>
+          <div class="col-4 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="eyeliner">
+              <label class="form-check-label" for="exampleRadios2">
+                Eyeliner
+              </label>
+            </div>
+          </div>
+          <div class="col-4 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="foundation">
+              <label class="form-check-label" for="exampleRadios1">
+                Foundation
+              </label>
+            </div>
+          </div>
+          <div class="col-4 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="lip_liner">
+              <label class="form-check-label" for="exampleRadios2">
+                Lip liner
+              </label>
+            </div>
+          </div>
+          <div class="col-4 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="lipstick">
+              <label class="form-check-label" for="exampleRadios1">
+                Lipstick
+              </label>
+            </div>
+          </div>
+          <div class="col-4 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="mascara">
+              <label class="form-check-label" for="exampleRadios2">
+                Mascara
+              </label>
+            </div>
+          </div>
+          <div class="col-4 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="nail_polish">
+              <label class="form-check-label" for="exampleRadios2">
+                Nail polish
+              </label>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div class="loading" *ngIf="loading">
+
+    <img src="https://media.giphy.com/media/sSgvbe1m3n93G/giphy.gif" alt="">
+    
+    </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4"
+      *ngFor="let producto of productos | paginate: { itemsPerPage: 12, currentPage: pageActual }">
+      <div class="container page-wrapper">
+        <div class="page-inner">
+          <div class="row">
+            <div class="el-wrapper">
+              <div class="box-up">
+                <img class="img" [src]="producto.api_featured_image" alt="">
+                <div class="img-info">
+                  <div class="info-inner">
+                    <span class="p-name">{{producto.name}}</span>
+                    <span class="p-tipo">{{producto.category}}</span>
+                  </div>
+                  <div class="a-color"><span class="color">{{producto.tag_list[1]}}</span></div>
+                </div>
+              </div>
+
+              <div class="box-down">
+                <div class="h-bg">
+                  <div class="h-bg-inner"></div>
+                </div>
+
+                <a class="cart" href="#">
+                  <span class="price">{{producto.price}}{{producto.price_sign}}</span>
+                  <span class="add-to-cart">
+                    <span class="txt" (click)="goToDetails(producto)">Details</span>
+
+                  </span>
+
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pagination-controls class="paginator" (pageChange)="pageActual = $event" *ngIf="productos.length !== 0">
+    </pagination-controls>
+  </div>
+</div>

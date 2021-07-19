@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&display=swap');
+@font-face {
+    font-family: 'rodrigues';
+    src: url('../src/assets/tipografia/rodrigues.woff2') format('woff2'),
+         url('../src/assets/tipografia/rodrigues.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+:root {
+    --color-princial: rgb(213, 160, 180);
+    --color-secundario: rgba(1,38,35);
+    --fuente-princial: 'Montserrat', sans-serif;
+    --fuente-secundaria: 'rodrigues';
+    --fontsize: 1em;
+    
+}
+/* paginator */
+.paginator{
+    font-family: var(--fuente-primaria)!important;
+    --fontsize: 1em!important;
+}
+
+.paginator .ngx-pagination .current {
+    background: var(--color-princial);
+    border-radius: 100%;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.paginator .ngx-pagination a:hover, .ngx-pagination button:hover {
+    background: #d4d4d4;
+    border-radius: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+    text-decoration: none;
+}
+
+.paginator .ngx-pagination a:focus, .ngx-pagination button:focus {
+    outline: none;
+    background: #d4d4d4;
+}
+
+
