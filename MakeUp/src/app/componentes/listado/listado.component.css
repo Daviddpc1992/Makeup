@@ -139,6 +139,8 @@ font-family: var(--fuente-primaria);
   .el-wrapper .img {
   width: 300px;
   height: auto;
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
     -webkit-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
     -moz-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
     -o-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
@@ -149,6 +151,7 @@ font-family: var(--fuente-primaria);
     -o-transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
     transition-timing-function: cubic-bezier(0, 0, 0.18, 1);
     /* ease-out */
+
   }
   
   .h-bg {
